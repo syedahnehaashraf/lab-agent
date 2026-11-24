@@ -25,9 +25,12 @@ async def main():
     plate_car[0] = plate = cor_96_wellplate_360uL_Fb(name="cr_plate")
     lh.deck.assign_child_resource(plate_car, rails=15)
 
-    # TODO 1 (scientist's call): fresh tips for every transfer, or one set
-    #         carried down the series? Decide, and write a comment saying WHY.
-    #         You may be asked this in an interview.
+    # Tip policy: change tips everytime to prevent carry over
+    await lh.pick_up_tips(tips[column(1)])
+
+    for n in range(1,11):    
+        await lh.aspirate(plate[column(n)], vols=[TRANSFER_UL] * 8)
+        await lh.dispense(plate[column(n+1)], vols=[TRANSFER_UL] * 8)
 
     # TODO 2: loop over source columns 1..10. For each:
     #   - aspirate TRANSFER_UL from column n
