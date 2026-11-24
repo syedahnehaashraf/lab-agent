@@ -2,7 +2,7 @@ import asyncio
 from pylabrobot.liquid_handling import LiquidHandler
 from pylabrobot.liquid_handling.backends import LiquidHandlerChatterboxBackend
 from pylabrobot.resources.hamilton import STARLetDeck          # check against step 1
-from pylabrobot.resources import TIP_CAR_480_A00, PLT_CAR_L5AC_A00, cor_96_wellplate_360ul_Fb  # check
+from pylabrobot.resources import TIP_CAR_480_A00, PLT_CAR_L5AC_A00, cor_96_wellplate_360uL_Fb  # check
 from pylabrobot.resources.hamilton import hamilton_96_tiprack_300uL_filter
 
 TRANSFER_UL = 50   # 50 into 100 = 1-in-3
